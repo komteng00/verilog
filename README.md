@@ -1,4 +1,7 @@
 # help! slotmachine verilog
+
+// Hi i tried to make slotmachine, but its not working so far. Everything work except (module slotmachine) can someone help me with this code?
+
 module lfsr (clk, reset_b, seed_pulse, cnt, q);
   input wire clk, reset_b, seed_pulse;
   input wire [15:0] cnt;
