@@ -1,4 +1,4 @@
-# slotmachine verilog
+# help! slotmachine verilog
 module lfsr (clk, reset_b, seed_pulse, cnt, q);
   input wire clk, reset_b, seed_pulse;
   input wire [15:0] cnt;
