@@ -59,7 +59,6 @@ module counter (clk, reset_b, start, cnt, seed_pulse);
       else
         seed_pulse <= 1'b0;
     end
-  //이 위는 눌렀을 때 딱 1번만 seed 값이 나오게 하는 과정
 endmodule
 
 //random1
@@ -91,10 +90,10 @@ module random1 (clk, reset_b, start, q, random1);
         begin
           random1 <= q%10;
           cnt <= cnt;
-          randomed <= 1'b1; //1이 수행되면
+          randomed <= 1'b1; 
         end
       else
-        begin //여기로 무조건 수행되게 되어 있다.
+        begin 
           random1 <= random1;
           cnt <= cnt + 1;
           randomed <= randomed;
@@ -126,16 +125,16 @@ module random2 (clk, reset_b, start, q, random2);
         begin
           cnt <= 16'b0;
           random2 <= 16'b0;
-          randomed <= 1'b0; //random 값을 0으로
+          randomed <= 1'b0; 
         end
       else if (start & (cnt == magic) & ~randomed)
         begin
           random2 <= q%10;
           cnt <= cnt;
-          randomed <= 1'b1; //1이 수행되면
+          randomed <= 1'b1; 
         end
       else
-        begin //여기로 무조건 수행되게 되어 있다.
+        begin 
           random2 <= random2;
           cnt <= cnt + 1;
           randomed <= randomed;
@@ -167,16 +166,16 @@ module random3 (clk, reset_b, start, q, random3);
         begin
           cnt <= 16'b0;
           random3 <= 16'b0;
-          randomed <= 1'b0; //random 값을 0으로
+          randomed <= 1'b0;
         end
       else if (start & (cnt == magic) & ~randomed)
         begin
           random3 <= q%10;
           cnt <= cnt;
-          randomed <= 1'b1; //1이 수행되면
+          randomed <= 1'b1; 
         end
       else
-        begin //여기로 무조건 수행되게 되어 있다.
+        begin 
           random3 <= random3;
           cnt <= cnt + 1;
           randomed <= randomed;
